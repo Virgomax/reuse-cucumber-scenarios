@@ -1,0 +1,24 @@
+{
+  "name": "reuse-cucumber-scenarios",
+  "version": "1.0.0",
+  "description": "Reuse cucumber scenarios by calling them by their tag",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "reuse",
+    "cucumber",
+    "scenarios",
+    "call",
+    "run",
+    "execute",
+    "dry"
+  ],
+  "author": "Martin Carrasco",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virgomax/reuse-cucumber-scenarios.git"
+  }
+}

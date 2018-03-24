@@ -20,5 +20,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/virgomax/reuse-cucumber-scenarios.git"
+  },
+  "devDependencies" : {
+    "cucumber": "^4.0.0",
+    "glob": "^7.1.2",
+    "util-arity": "^1.1.0"
   }
 }

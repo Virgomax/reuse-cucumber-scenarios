@@ -3,10 +3,16 @@ const stepHelper = {
   toFunctionName(stepPattern){  //converts stepName to functionName
     //stepPattern = 'the user {int} is on {string} page';  returns 'the_user_INT_is_on_STRING_page'
     var paramArray = stepPattern.match(/\{(.*?)\}/g);  // this regex: https://stackoverflow.com/a/1493071/7491858
-    var stepPatternUpperParam = paramArray.reduce((a,b)=>{
-      var c = b.slice(1,-1).toUpperCase();
-      return a.replace(b,c);
-    },stepPattern);
+    var stepPatternUpperParam;
+    if(paramArray!==null){
+      stepPatternUpperParam = paramArray.reduce((a,b)=>{
+        var c = b.slice(1,-1).toUpperCase();
+        return a.replace(b,c);
+      },stepPattern);
+    }
+    else{
+      stepPatternUpperParam = stepPattern;
+    }
     return stepPatternUpperParam.replace(/[^a-zA-Z0-9 ]/g, "").replace(/\s/g, "_");  //keep only letters, numbers and spaces then replace spaces with underscores
   },
 

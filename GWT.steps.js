@@ -19,7 +19,7 @@ const GWTsteps = (function(){
     var tags = scenario.pickle.tags; //get tags from this scenario
     OtherWorld.resetProperties();
     OtherWorld.setCurrentScenarioTag(tags[0].name); // set current scenario Tag in CustomWorld
-    console.log('-------------NEW SCENARIO-----------');
+    //console.log('-------------NEW SCENARIO-----------');
     return;
   });
    

@@ -45,22 +45,32 @@ const runScenarioWithParameters = async (scenarioTag,paramsObj)=>{
 
 
 const runScenarioWithTimeout = async (scenarioTag) =>{
-  var timeout = ScStore.scenarios[scenarioTag].functionTimeout;
-  try{ 
-    await sHelper.promiseTimeout(timeout,runScenario(scenarioTag));
+  var thisScenario = ScStore.scenarios[scenarioTag];
+  if(thisScenario)
+  {
+    var timeout = ScStore.scenarios[scenarioTag].functionTimeout;
+    try{ 
+      await sHelper.promiseTimeout(timeout,runScenario(scenarioTag));
+    }
+    catch(err){ throw new Error(err);}
+    return;
   }
-  catch(err){ throw new Error(err);}
-  return;
+  else{throw new Error(`Reuse-cucumber-scenarios says: The scenario "@${scenarioTag}" has to be defined and executed before calling it.`);}
 };
 
 const runScenarioWithParametersWithTimeout = async (scenarioTag, parametersString) =>{
-  var paramsObj = JSON.parse(parametersString);
-  var timeout = paramsObj['timeout'] || ScStore.scenarios[scenarioTag].functionTimeout;
-  try{    
-    await sHelper.promiseTimeout(timeout,runScenarioWithParameters(scenarioTag, paramsObj));
+  var thisScenario = ScStore.scenarios[scenarioTag];
+  if(thisScenario)
+  {
+    var paramsObj = JSON.parse(parametersString);
+    var timeout = paramsObj['timeout'] || ScStore.scenarios[scenarioTag].functionTimeout;
+    try{    
+      await sHelper.promiseTimeout(timeout,runScenarioWithParameters(scenarioTag, paramsObj));
+    }
+    catch(err){throw new Error(err);}
+    return;
   }
-  catch(err){throw new Error(err);}
-  return;
+  else{throw new Error(`Reuse-cucumber-scenarios says: The scenario "@${scenarioTag}" has to be defined and executed before calling it.`);}
 };
 
 const maxScenarioTimeout = 10000000;

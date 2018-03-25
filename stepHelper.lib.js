@@ -36,7 +36,7 @@ const stepHelper = {
     let timeout = new Promise((resolve, reject) => {
       let id = setTimeout(() => {
         clearTimeout(id);
-        reject('Timed out in '+ ms + 'ms.')
+        reject('Reuse-cucumber-scenarios says: Function timed out after '+ ms + ' milliseconds.')
       }, ms)
     });
   

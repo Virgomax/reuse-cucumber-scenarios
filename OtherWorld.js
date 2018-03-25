@@ -5,6 +5,8 @@ var OtherWorld = {
   functionTimeout: 0,
   currentScenarioTag: undefined,
   saved: false,
+  worldToBind:{},
+  StepFunctionsStore: undefined,
   
   setCurrentScenarioTag(currentScenarioTag){
     this.currentScenarioTag = currentScenarioTag.replace('@','');
@@ -30,6 +32,7 @@ var OtherWorld = {
     this.functionTimeout = 0;
     this.currentScenarioTag = undefined;
     this.saved = false;
+    this.worldToBind = {};
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "reuse-cucumber-scenarios",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Reuse cucumber scenarios by calling them by their tag",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,7 @@
     "reuse",
     "cucumber",
     "scenarios",
+    "steps",
     "call",
     "run",
     "execute",

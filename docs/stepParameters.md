@@ -120,3 +120,5 @@ When the scenario "@task2" happens with parameters
 }
 """
 ```
+
+[<< Calling Scenarios](/docs/callingScenarios.md)________________[Gherkin Variables >>](/docs/gherkinVariables.md)

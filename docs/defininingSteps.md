@@ -50,3 +50,6 @@ module.exports = stepDefinitions;
 Inside a step definition object, you have to use the keys `stepMethod`, `stepPattern`, `stepFunction` and `stepTimeout`(this last one is optional).
 By creating your step definitions in this way, you are giving them the capability of being part of a reusable scenario. 
 You can do this with any step definition and it will still work as if it was defined using the traditional `When`, `Given`, `Then` cucumber methods.
+
+
+[<< Step Patterns](/docs/stepPatterns.md)________________[Calling Scenarios >>](/docs/callingScenarios.md)

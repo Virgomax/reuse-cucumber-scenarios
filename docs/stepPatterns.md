@@ -70,3 +70,6 @@ Given the scenario "@$scenario_function_tag" for variable "$variable_name" from 
 
 Where `@scenario_tag` and `@$scenario_function_tag` are a unique tags that identify some previous scenarios and `$variable_name` is a variable that you define and remains across scenarios and `.feature` files.
 (see more:[Scenario Functions](/docs/scenarioFunctions.md))
+
+
+[<< Enabling this package](/docs/enabling.md)________________[Defining Steps >>](/docs/definingSteps.md)

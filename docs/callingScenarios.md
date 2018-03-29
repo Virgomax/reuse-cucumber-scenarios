@@ -35,5 +35,5 @@ By default, the timeout of this composite step is the sum of the timeout of its 
 
 We have to highligth that for this to work, we need to place the scenario "@task1" before the scenario "@task2". If they are in separated `.feature` files, then the name of the file where "@task1" is located must be alphabetically before the name of the file where "@task2 is located.
 
-
+[<< Defining Steps](/docs/definingSteps.md)________________[Step Parameters >>](/docs/stepParameters.md)
 

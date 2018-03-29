@@ -17,3 +17,5 @@ If you want "reuse-cucumber-scenarios" to show messages about it's execution, yo
 const enableScenarioCalling = require('reuse-cucumber-scenarios');
 enableScenarioCalling(true);
 ```
+
+[<< INDEX](/README.md)________________[Step Patterns >>](/docs/stepPatterns.md)

@@ -10,7 +10,12 @@ const GWTsteps = (function(){
     return async function () {
       var stepFunctionName = sHelper.toFunctionName(thisStepDef.stepPattern);
       OtherWorld.appendStepFunction(stepFunctionName, arguments,thisStepDef.stepTimeout);
-      await stepFunctions[stepFunctionName].bind(OtherWorld.worldToBind)(...arguments);
+      if(!OtherWorld.isScenarioFunction)
+      {
+        try{
+          await stepFunctions[stepFunctionName].bind(OtherWorld.worldToBind)(...sHelper.replaceVariables(arguments));
+        }catch(err){throw new Error(err.stack);}
+      }
       return;
     };
   };

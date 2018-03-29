@@ -6,10 +6,14 @@ var OtherWorld = {
   currentScenarioTag: undefined,
   saved: false,
   worldToBind:{},
+  isScenarioFunction: false,
   StepFunctionsStore: undefined,
+  varStore: {},   //cucumber variables Storage
   
   setCurrentScenarioTag(currentScenarioTag){
     this.currentScenarioTag = currentScenarioTag.replace('@','');
+    if(/\$/.test(this.currentScenarioTag))
+    {this.isScenarioFunction=true;}
   },
 
   appendStepFunction(functionName,functionArguments,functionTimeout) {
@@ -33,6 +37,7 @@ var OtherWorld = {
     this.currentScenarioTag = undefined;
     this.saved = false;
     this.worldToBind = {};
+    this.isScenarioFunction = false;
   }
 }
 

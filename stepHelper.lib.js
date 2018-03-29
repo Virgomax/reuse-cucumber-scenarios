@@ -68,8 +68,15 @@ const stepHelper = {
     //console.log('ARGUMENTS',arguments);
     var str_arg = str_arg_0.toString();
     var deepVarsArray = this.getDeepest(str_arg);
+    //console.log('deepVarsArray',deepVarsArray);
     if (deepVarsArray.length === 0) {
-      return this.getNested(varObj,str_arg) || this.getNested(OtherWorld.varStore,str_arg) || str_arg;
+      var deepZero = str_arg;
+      var replaced = this.getNested(varObj,deepZero) || this.getNested(OtherWorld.varStore,deepZero) || deepZero;
+      while(replaced!==deepZero){
+        deepZero = replaced;
+        replaced = this.getNested(varObj,deepZero) || this.getNested(OtherWorld.varStore,deepZero) || deepZero;
+      }
+      return replaced;
     }
     else {
       var str_arg_1 = this.replaceDeepest(str_arg, varObj);

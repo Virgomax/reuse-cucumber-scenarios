@@ -18,4 +18,4 @@ const enableScenarioCalling = require('reuse-cucumber-scenarios');
 enableScenarioCalling(true);
 ```
 
-[<< INDEX](/README.md)________________[Step Patterns >>](/docs/stepPatterns.md)
+[<< INDEX](/README.md) ________________ [Step Patterns >>](/docs/stepPatterns.md)

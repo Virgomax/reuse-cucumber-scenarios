@@ -52,4 +52,4 @@ By creating your step definitions in this way, you are giving them the capabilit
 You can do this with any step definition and it will still work as if it was defined using the traditional `When`, `Given`, `Then` cucumber methods.
 
 
-[<< Step Patterns](/docs/stepPatterns.md)________________[Calling Scenarios >>](/docs/callingScenarios.md)
+[<< Step Patterns](/docs/stepPatterns.md) ________________ [Calling Scenarios >>](/docs/callingScenarios.md)

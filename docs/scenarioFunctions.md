@@ -73,4 +73,4 @@ To define a scenario function, you have to assign a unique tag starting with `@$
 
 This example will use the necessary steps to login 3 users.
 
-[<< Gherkin Variables](/docs/gherkinVariables.md)________________[INDEX >>](/README.md)
+[<< Gherkin Variables](/docs/gherkinVariables.md) ________________ [INDEX >>](/README.md)

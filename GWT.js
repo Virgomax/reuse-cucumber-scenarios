@@ -10,7 +10,7 @@ const GWTsteps = (function(){
     return async function () {
       var stepFunctionName = sHelper.toFunctionName(thisStepDef.stepPattern);
       OtherWorld.appendStepFunction(stepFunctionName, arguments,thisStepDef.stepTimeout);
-      if(!OtherWorld.isScenarioFunction)
+      if(OtherWorld.currentScenarioTag && !OtherWorld.isScenarioFunction)
       {
         try{
           await stepFunctions[stepFunctionName].bind(OtherWorld.worldToBind)(...sHelper.replaceVariables(arguments));
@@ -23,7 +23,8 @@ const GWTsteps = (function(){
   cucumber.Before(function(scenario){
     var tags = scenario.pickle.tags; //get tags from this scenario
     OtherWorld.resetProperties();
-    OtherWorld.setCurrentScenarioTag(tags[0].name); // set current scenario Tag in CustomWorld
+    if(tags.length>0)
+    { OtherWorld.setCurrentScenarioTag(tags[0].name); }// set current scenario Tag in CustomWorld
     //console.log('-------------NEW SCENARIO-----------',tags[0].name);
     OtherWorld.worldToBind = this;
     return;
@@ -39,14 +40,12 @@ const GWTsteps = (function(){
   });
 
   cucumber.After(function(scenario){
-    OtherWorld.saveInScStore();
+    if(OtherWorld.currentScenarioTag)
+    {  OtherWorld.saveInScStore(); }
     return;
   });
 })();
 
 module.exports = GWTsteps;
-
-
-
 
 

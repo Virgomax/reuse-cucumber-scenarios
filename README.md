@@ -23,7 +23,7 @@ $ npm install --save-dev reuse-cucumber-scenarios
 * [Step Parameters](/docs/stepParameters.md)
 * [Gherkin Variables](/docs/gherkinVariables.md)
 * [Scenario Functions](/docs/scenarioFunctions.md)
-
+* [Examples](/docs/examples.md)
 
 ## Enjoy the Power
 

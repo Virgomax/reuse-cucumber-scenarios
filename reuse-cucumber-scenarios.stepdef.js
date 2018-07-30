@@ -1,5 +1,5 @@
 const sHelper = require('./stepHelper.lib');
-const ScStore = require('./ScenarioStore');
+const ScStore = require('./scenarioStore');
 const OtherWorld = require('./OtherWorld');
 var arity = require('util-arity');
 

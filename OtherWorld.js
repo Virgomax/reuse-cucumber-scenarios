@@ -1,4 +1,4 @@
-const ScStore = require('./ScenarioStore');
+const ScStore = require('./scenarioStore');
 
 var OtherWorld = {
   functionList: [],

@@ -2,6 +2,16 @@ const OtherWorld = require('./OtherWorld');
 
 const stepHelper = {
   defaultTimeout: 5000,
+
+  firstScenarioTag(tags){
+    var lines = tags.map(tag=>tag.location.line);
+    var maxLine = Math.max.apply(null, lines);
+    var columns = tags.map(tag=>tag.location.column);
+    var minColumn = Math.min.apply(null, columns);
+    var tagMaxLineMinColumn = tags.filter(tag=> tag.location.line === maxLine && tag.location.column == minColumn);
+    return tagMaxLineMinColumn[0];
+  },
+  
   toFunctionName(stepPattern){  //converts stepName to functionName
     //stepPattern = 'the user {int} is on {string} page';  returns 'the_user_INT_is_on_STRING_page'
     var paramArray = stepPattern.match(/\{(.*?)\}/g);  // this regex: https://stackoverflow.com/a/1493071/7491858

@@ -24,7 +24,10 @@ const GWTsteps = (function(){
     var tags = scenario.pickle.tags; //get tags from this scenario
     OtherWorld.resetProperties();
     if(tags.length>0)
-    { OtherWorld.setCurrentScenarioTag(tags[0].name); }// set current scenario Tag in CustomWorld
+    { 
+      var scenarioTag = sHelper.firstScenarioTag(tags);    // select first tag in the last line 
+      OtherWorld.setCurrentScenarioTag(scenarioTag.name);  // set current scenario Tag in CustomWorld
+    }
     //console.log('-------------NEW SCENARIO-----------',tags[0].name);
     OtherWorld.worldToBind = this;
     return;
